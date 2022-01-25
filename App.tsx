@@ -86,9 +86,11 @@ const styles = StyleSheet.create({
     color: 'white',
     backgroundColor: 'red',
     borderRadius: 10,
-    height: 50, 
-    padding: 14, 
-    margin: 10, 
+    height: 70, 
+    padding: 20, 
+    margin: 10,
+    fontSize: 18,
+    fontWeight: 'bold', 
     textAlign: 'right'
   },
   contentText: {
@@ -97,9 +99,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderColor: 'black',
     borderWidth: 2,
-    padding: 10, 
+    padding: 20, 
     margin: 10, 
     fontSize: 20,
+    fontWeight: 'bold',
     textAlign: 'center',
   }
 });
