@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Alert, StyleSheet, Text, View } from 'react-native';
 import { SwipeListView } from 'react-native-swipe-list-view';
 
 const App: React.FC<{}> = () => {
@@ -23,10 +23,29 @@ const App: React.FC<{}> = () => {
     console.log('swipeData = ',swipeData);
     console.log(data.translateX)
     if(data.translateX < 0){
-      const newlist = [...list];
-      const ind = list.findIndex(item => item.key === swipeData);
-      newlist.splice(ind,1);
-      setList(newlist)
+      Alert.alert(
+        "Delete Item ?",
+        "Are you sure, you want to delete this item ?",
+        [
+          {
+            text: "Cancel",
+            onPress: () => {
+              console.log("Cancel Pressed");
+            },
+            style: "cancel"
+          },
+          { 
+            text: "OK", 
+            onPress: () => {
+              console.log("OK Pressed");
+              const newlist = [...list];
+              const ind = list.findIndex(item => item.key === swipeData);
+              newlist.splice(ind,1);
+              setList(newlist)
+            } 
+          }
+        ]
+      );
     }
   }
 
